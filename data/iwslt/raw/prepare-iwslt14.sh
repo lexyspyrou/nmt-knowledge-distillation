@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
 # Adapted from https://github.com/facebookresearch/MIXER/blob/master/prepareData.sh
-
+#
 #echo 'Cloning Moses github repository (for tokenization scripts)...'
 #git clone https://github.com/moses-smt/mosesdecoder.git
-
+#
 #echo 'Cloning Subword NMT repository (for BPE pre-processing)...'
 #git clone https://github.com/rsennrich/subword-nmt.git
 
@@ -22,7 +22,8 @@ rm -r $tmp
 rm -r $prep
 mkdir -p $orig $tmp $prep
 
-for src in ar de es fa he it nl pl; do
+#for src in ar de es fa he it nl pl; do
+for src in de; do # we are only interested in de-en
     tgt=en
     lang=$src-en
 
