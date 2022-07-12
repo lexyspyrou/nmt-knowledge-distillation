@@ -61,6 +61,7 @@ class MultiheadAttention(nn.Module):
         if self.bias_v is not None:
             nn.init.xavier_normal_(self.bias_v)
 
+    @torch.no_grad()
     def forward(self, query, key, value, key_padding_mask=None, incremental_state=None,
                 need_weights=True, static_kv=False, attn_mask=None):
         """Input shape: Time x Batch x Channel
